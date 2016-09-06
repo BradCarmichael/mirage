@@ -1,3 +1,192 @@
 footer {
 	clear: both;
 }
+
+
+footer {
+	background-color: #2d2e2e;
+	// height: 600px;
+}
+
+.dynamic-sidebar-wrap {
+	display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.dynamic-sidebar {
+  display: flex;
+  justify-content: center;
+  width: 33.3333333%; 
+  color: #666666;  
+  align-items: center; 
+  line-height: 21px;
+}
+
+.copyright {
+    color: #666666;
+    text-align: center;
+    padding: 20px 0px;
+    a {
+        color: #666666;
+        transition: color .2s;
+    }
+    a:hover {
+        color: #abbd69;
+    }
+}
+
+.copyright:before{
+        content: '';
+        display: block;
+        background: #666666;
+        height: 1px;
+        max-width: 100%;
+        margin-top: 20px;
+        margin-bottom: 30px;
+}
+
+h3 {
+    font-size: 18px;
+    color: #fff;
+    padding-top: 60px;
+    text-transform: uppercase;
+}
+
+ h3:after{
+      content: '';
+      display: block;
+      background: #666666;
+      height: 1px;
+      max-width: 85px;
+      margin-top: 20px;
+      margin-bottom: 25px;  
+}
+
+.dynamic-sidebar.post ul li a {
+    color: #666666;
+    transition: color .2s;
+}
+
+.dynamic-sidebar.post ul li a:hover {
+    color: #abbd69;
+}
+
+
+// email input newsletter section
+.wysija-input {
+  padding: 8px;
+  font-size: 14px;
+  color: #666666;
+  background-color: #494a49;
+  border: 1px solid #494a49;
+  border-radius: 2px;
+}
+
+// submit button newsletter section
+.wysija-submit.wysija-submit-field {
+    background-color: #abbd69;
+    border: 1px solid #494a49;
+    margin: 0px; 
+    color: #fff;
+    padding: 8px;
+    font-size: 14px; 
+    transition: background-color .2s; 
+    border-radius: 2px;
+    -webkit-appearance: none;
+}
+
+#form-wysija-2 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.wysija-submit.wysija-submit-field:focus {
+  background-color:#778449;  
+}
+
+.wysija-submit.wysija-submit-field:active {
+  background-color: #444b2a;
+}
+.wysija-submit.wysija-submit-field:hover {
+  background-color:#889754;
+}
+
+// ICONS
+.footer-icon-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  width: 100%;
+  position: relative;
+}
+
+.footer-icon-wrap ul {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.icon-circle {
+  position: relative;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background: #494a49;
+  border: 1px solid #494a49;
+  margin-right: 7px;
+  margin-top: 22px;
+  transition: .2s;
+  font-size: 16px;
+}
+
+.icon-circle i {
+  color: #ffffff;
+  position: absolute;
+  padding: 14px;
+}
+
+.fa.fa-facebook {
+  left: 3px;
+}
+
+.icon-circle:hover {
+  background-color: #abbd69;
+  position: relative;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  border: 1px solid #494a49;
+  margin-right: 7px;
+  margin-top: 22px;
+  transition: .5s;
+  font-size: 16px;
+}
+
+.icon-circle i:hover {
+  color: #494a49;
+}
+
+@media (max-width: 830px) {
+  .dynamic-sidebar {
+    width: 50%;
+  }
+  .footer-icon-wrap {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 560px) {
+  .dynamic-sidebar-wrap {
+    flex-direction: column-reverse;
+  .dynamic-sidebar {
+    width: 100%;
+    }
+    .footer-icon-wrap {
+    justify-content: flex-start;
+  }
+  }
+}
+
+

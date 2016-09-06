@@ -13,6 +13,11 @@
 @import 'sidebar';
 @import 'comments';
 @import 'footer';
+@import 'vars';
+@import 'frontpage';
+@import 'home';
+@import 'contact';
+@import 'single';
 /*
 ====================================
 Default Styling
@@ -25,22 +30,81 @@ img {
 
 body {
 	color: #333;
+	font-family: $font-family-main;
 }
 
-.container {
-	max-width: 1200px;
-	margin: 0 auto;
+
+// =================================
+
+// blog single page 
+
+.blog-page-img {
+    max-width: 100%;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-wrap: wrap;
+    img {
+        padding: 20px;
+    }
 }
 
-.content {
-	float: left;
-	width: 65%;
-	margin-right: 5%;
+.entry-title {
+	padding-top: 40px;
+    padding-bottom: 30px;
 }
 
-.full {
-	width: 100%;
+.post-content {
+	padding-left: 10px;
 }
+
+.entry-meta {
+	padding-bottom: 20px;
+}
+
+.navigation {
+    padding-top: 30px;
+}
+
+#respond .form-submit {
+    margin-top: 20px;
+}
+
+.submit {
+    background-color: #abbd69;
+    border: 1px solid #494a49;
+    margin-top: 15px;
+    color: #fff;
+    padding: 8px;
+    font-size: 14px; 
+    transition: background-color .2s; 
+    border-radius: 1px;
+    border: 1px solid #abbd69;
+}
+
+#respond .form-submit input {
+	color: #fff;
+	text-transform: uppercase;
+} 
+
+.submit:focus {
+  background-color:#778449;  
+}
+
+.sumbit:active {
+  background-color: #444b2a;
+}
+.submit:hover {
+  background-color:#889754;
+}
+
+//  =================================
+
+
+ 
+
+
+
 
 
 

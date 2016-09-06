@@ -1,0 +1,124 @@
+// contact form
+.wpcf7-form {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+	label {
+		color: black;
+		padding-bottom: 5px;
+	}
+	p {
+		margin: 0px 20px;
+		padding: 10px 0px;
+		line-height: 2.0;
+	}
+	textarea {
+	width: 470px;
+    height: 120px;
+    width: 470px;
+    height: 120px;
+    font-size: 14px;
+    padding: 10px;
+    border: 1px solid #dddddd;
+	}
+	input {
+		width: 215px;
+		width: 215px;
+	    height: 35px;
+	    font-size: 14px;
+	    padding-left: 10px;
+	}
+	input[type=submit] {
+    margin-top: 30px;
+    padding: 9px 0px;
+    width: 140px;
+    background-color: #abbd69;
+    border: 1px solid #494a49;
+    color: #fff;
+    padding: 8px;
+    font-size: 14px; 
+    transition: background-color .2s; 
+    border-radius: 1px;
+    border: 1px solid #abbd69;
+    margin-bottom: 30px;
+    -webkit-appearance: none;
+	}
+}
+
+input[type=submit]:focus {
+  background-color:#778449;
+}
+
+input[type=submit]:active {
+  background-color: #444b2a;
+}
+
+input[type=submit]:hover {
+  background-color:#889754;
+}
+
+.dynamic-sidebar-wrap.contact {
+	padding: 0px 10px 50px 10px;
+	flex-wrap: nowrap;
+	display: flex;
+	justify-content: center;
+}
+
+.dynamic-sidebar.contact {
+	background-color: #abbd69; 
+	padding: 20px;
+	line-height: 22px;
+	.widget-title {
+	color: #262626;
+	padding-top: 0px;
+    }
+} 
+
+.address-info a {
+	color: #666;	
+}
+
+.address-info a:focus {
+  color:#778449;  
+}
+
+.address-info a:active {
+	color: #444b2a;
+}
+.address-info a:hover {
+	color:#889754;
+}
+
+.form-wrap {
+	color: #f8f8f8;
+}
+
+@media (max-width: 940px) {
+	.dynamic-sidebar-wrap.contact {
+		flex-wrap: wrap;
+		.dynamic-sidebar.contact {
+			width: 70%;
+		}
+		.form-wrap {
+			width: 70%;
+		}
+	}
+}
+
+/* Landscape phone to portrait tablet */
+@media (max-width: 730px) {
+		.dynamic-sidebar-wrap.contact .dynamic-sidebar.contact,  {
+			width: 100%;
+		}
+		.dynamic-sidebar-wrap.contact .form-wrap{
+			width: 100%;
+		}
+	}
+
+/* Landscape phones and down */
+@media (max-width: 480px) {
+	.wpcf7-form textarea {
+		width: 250px;
+	}
+}

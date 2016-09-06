@@ -20,6 +20,10 @@ function theme_setup() {
 
 	// add option to upload logo in theme customizer
 	add_theme_support( 'custom-logo' );
+	function theme_prefix_setup() {
+    add_theme_support( 'custom-logo' );
+}
+add_action( 'after_setup_theme', 'theme_prefix_setup' );
 
 
 	/* This theme uses wp_nav_menu() in one location.
@@ -36,8 +40,6 @@ function theme_setup() {
 	add_theme_support( 'html5', array(
 		'search-form', 'comment-form', 'comment-list', 'gallery', 'caption'
 	) );
-
-
 }
 endif;
 
@@ -48,9 +50,22 @@ We'll let WordPress add them to our templates automatically instead
 of writing our own link tags in the header. */
 
 function hackeryou_styles(){
-	wp_enqueue_style('style', get_stylesheet_uri() );
-
 	wp_enqueue_style('fontawesome', 'https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css');
+
+	wp_enqueue_style(
+		'owl-main',
+		get_template_directory_uri() . '/js/owl.carousel.css',
+		null,
+		null
+		);
+
+	wp_enqueue_style(
+		'owl-transitions',
+		get_template_directory_uri() . '/js/owl.transitions.css',
+		null,
+		null
+		);
+	wp_enqueue_style('style', get_stylesheet_uri() );
 }
 
 add_action( 'wp_enqueue_scripts', 'hackeryou_styles');
@@ -78,10 +93,21 @@ function hackeryou_scripts() {
     true //load in footer
   );
 
+    // adding owl
+    wp_enqueue_script(
+    	'owl',
+    	get_template_directory_uri() . '/js/owl.carousel.min.js',
+    	array('jquery'),
+    	null,
+    	true
+    );
+
+
+    //add flickity here as well
   wp_enqueue_script(
     'scripts', //handle
     get_template_directory_uri() . '/js/main.min.js', //source
-    array( 'jquery', 'plugins' ), //dependencies
+    array( 'jquery', 'plugins', 'owl'  ), //dependencies
     null, // version number
     true //load in footer
   );
@@ -179,7 +205,42 @@ function hackeryou_widgets_init() {
 		'before_title' => '<h3 class="widget-title">',
 		'after_title' => '</h3>',
 	) );
-
+	register_sidebar( array(
+		'name' => 'Secondary Widget Area',
+		'id' => 'secondary-widget-area',
+		'description' => 'The secondary widget area',
+		'before_widget' => '<li id="%1$s" class="widget-container %2$s">',
+		'after_widget' => '</li>',
+		'before_title' => '<h3 class="widget-title">',
+		'after_title' => '</h3>',
+	) );
+	register_sidebar( array(
+		'name' => 'Third Widget Area',
+		'id' => 'third-widget-area',
+		'description' => 'The third widget area',
+		'before_widget' => '<li id="%1$s" class="widget-container %2$s">',
+		'after_widget' => '</li>',
+		'before_title' => '<h3 class="widget-title">',
+		'after_title' => '</h3>',
+	) );
+	register_sidebar( array(
+		'name' => 'Contact1 Widget Area',
+		'id' => 'contact1-widget-area',
+		'description' => 'The contact1 widget area',
+		'before_widget' => '<li id="%1$s" class="widget-container %2$s">',
+		'after_widget' => '</li>',
+		'before_title' => '<h3 class="widget-title">',
+		'after_title' => '</h3>',
+	) );
+	register_sidebar( array(
+		'name' => 'Contact2 Widget Area',
+		'id' => 'contact2-widget-area',
+		'description' => 'The contact2 widget area',
+		'before_widget' => '<li id="%1$s" class="widget-container %2$s">',
+		'after_widget' => '</li>',
+		'before_title' => '<h3 class="widget-title">',
+		'after_title' => '</h3>',
+	) );
 }
 
 add_action( 'widgets_init', 'hackeryou_widgets_init' );
@@ -281,3 +342,17 @@ function get_post_parent($post) {
 		return $post->ID;
 	}
 }
+
+
+// adds featured images
+function hackeryou_featured_image_url($post) {
+	$postId = $post->ID;
+	$image_id = get_post_thumbnail_id($postId);
+	$image_url = wp_get_attachment_url($image_id);
+
+	return $image_url;
+}
+
+
+
+
